@@ -18,7 +18,7 @@
        (loop (cons (string->number (car calories)) current) accumulator (cdr calories))))))
 
 (define (sum-calories calories)
-  (sort-descending (map (lambda (lst) (sum lst)) calories)))
+  (sort-descending (map sum calories)))
 
  (define (answer1 calories)
    (car (sum-calories (group-calories calories))))
