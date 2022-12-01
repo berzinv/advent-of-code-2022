@@ -3,7 +3,7 @@
  (group-calories sum-calories answer1 answer2)
  
  (import scheme
-         (only utilities file->lines sort-descending)
+         (only utilities file->lines sort-descending sum)
          (only srfi-1 take))
 
 (define (group-calories calories)
@@ -17,12 +17,12 @@
        (loop (cons (string->number (car calories)) current) accumulator (cdr calories))))))
 
 (define (sum-calories calories)
-  (sort-descending (map (lambda (lst) (apply + lst)) calories)))
+  (sort-descending (map (lambda (lst) (sum lst)) calories)))
 
  (define (answer1 calories)
    (car (sum-calories (group-calories calories))))
 
  (define (answer2 calories)
-   (apply + (take (sum-calories (group-calories calories)) 3)))
+   (sum (take (sum-calories (group-calories calories)) 3)))
  
 )
