@@ -1,5 +1,5 @@
 (import test
-        utilities
+        (only utilities file->lines)
         (prefix day1 day1:))
 
 (define calories (file->lines "input.day1.txt"))

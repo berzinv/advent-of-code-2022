@@ -1,6 +1,6 @@
 (module
  day1
- (sum-calories answer1 answer2)
+ (answer1 answer2)
  
  (import scheme
          (only utilities file->lines sort-descending)
