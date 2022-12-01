@@ -4,6 +4,7 @@
  
  (import scheme
          (only utilities file->lines sort-descending sum)
+         (only srfi-13 string-null?)
          (only srfi-1 take))
 
 (define (group-calories calories)
@@ -12,7 +13,7 @@
              (calories calories))
     (cond
       ((null? calories) (cons current accumulator))
-      ((string=? "" (car calories)) (loop '() (cons current accumulator) (cdr calories)))
+      ((string-null? (car calories)) (loop '() (cons current accumulator) (cdr calories)))
       (else
        (loop (cons (string->number (car calories)) current) accumulator (cdr calories))))))
 
