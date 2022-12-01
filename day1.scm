@@ -4,7 +4,7 @@
  
  (import scheme
          (only utilities file->lines sort-descending)
-         (only simple-loops do-list)
+;         (only simple-loops do-list)
          (only (chicken sort) sort)
          (only srfi-1 take)
          (only srfi-13 string-null?))
