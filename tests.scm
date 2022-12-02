@@ -24,7 +24,7 @@
             (test "Answer 2" 12 (day2:answer2 day2-test-input)))
 
 
- (test-group "Day 1 real input"
+ (test-group "Day 2 real input"
              (test "Answer 1"  11841 (day2:answer1 day2-real-input))
              (test "Answer 2"  13022 (day2:answer2 day2-real-input)))
 
