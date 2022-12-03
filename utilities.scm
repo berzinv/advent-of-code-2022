@@ -7,7 +7,8 @@
   text->file
   sort-descending
   sort-ascending
-  sum)
+  sum
+  list-chunk)
  (import scheme
          srfi-1
          (chicken io)
@@ -39,6 +40,11 @@
 
  (define (sum lst)
    (apply + lst))
+
+ (define (list-chunk lst n)
+   (if (not (equal? lst '()))
+       (cons (take lst n) (list-chunk (drop lst n) n))
+       '() ))
 
  )
 
