@@ -8,12 +8,15 @@
   sort-descending
   sort-ascending
   sum
-  list-chunk)
+  list-chunk
+  list-items-unique?)
  (import scheme
          srfi-1
          (chicken io)
 	 (chicken base)
-         (chicken sort))
+         (chicken sort)
+         (only traversal remove-duplicatesq))
+ 
  (define (file->string filename)
    (with-input-from-file filename read-string))
 
@@ -45,6 +48,9 @@
    (if (not (equal? lst '()))
        (cons (take lst n) (list-chunk (drop lst n) n))
        '() ))
+
+ (define (list-items-unique? lst)
+   (= (length lst) (length (remove-duplicatesq lst))))
 
  )
 

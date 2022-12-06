@@ -3,13 +3,14 @@
  (answer1 answer2)
  (import scheme
          (chicken base)
+         (only utilities list-items-unique?)
          (only traversal remove-duplicatesq)
          (only srfi-1 take))
 
  (define (search-distinct signal count)
   (let loop ((signal signal) (pos 0))
     (cond
-      ((= count (length (remove-duplicatesq (take signal count)))) pos)
+      ((list-items-unique? (take signal count)) pos)
       (else
        (loop (cdr signal) (add1 pos))))))
 
