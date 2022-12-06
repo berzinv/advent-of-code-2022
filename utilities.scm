@@ -9,7 +9,8 @@
   sort-ascending
   sum
   list-chunk
-  list-items-unique?)
+  list-items-unique?
+  rotate-matrix)
  (import scheme
          srfi-1
          (chicken io)
@@ -51,6 +52,9 @@
 
  (define (list-items-unique? lst)
    (= (length lst) (length (remove-duplicatesq lst))))
+
+ (define (rotate-matrix m)
+   (apply map list (reverse m)))
 
  )
 
