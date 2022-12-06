@@ -4,7 +4,6 @@
  (import scheme
          (chicken base)
          (only utilities list-items-unique?)
-         (only traversal remove-duplicatesq)
          (only srfi-1 take))
 
  (define (search-distinct signal count)
