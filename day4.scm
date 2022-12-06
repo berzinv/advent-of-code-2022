@@ -3,7 +3,7 @@
  (parse-line fully-contains? overlaps? answer1 answer2)
  (import scheme
          (chicken base)
-         (only utilities char->number)
+         (only utilities)
          (only (chicken irregex) irregex-extract)
          (only srfi-1 filter first second third fourth iota lset-difference))
 
