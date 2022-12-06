@@ -3,7 +3,8 @@
         (prefix day1 day1:)
         (prefix day2 day2:)
         (prefix day3 day3:)
-        (prefix day4 day4:))
+        (prefix day4 day4:)
+        (prefix day6 day6:))
 
 (define day1-test-input (file->lines "input.day1.test.txt"))
 (define day1-real-input (file->lines "input.day1.txt"))
@@ -48,6 +49,18 @@
 (test-group "Day 4 real input"
             (test "Answer 1"  431 (day4:answer1 day4-real-input))
             (test "Answer 2"  823 (day4:answer2 day4-real-input)))
+
+
+(define day6-test-input (file->lines "input.day6.test.txt"))
+(define day6-real-input (file->lines "input.day6.txt"))
+
+(test-group "Day 6 test input"
+            (test "Answer 1" 11 (day6:answer1 (string->list (car day6-test-input))))
+            (test "Answer 2" 26 (day6:answer2 (string->list (car day6-test-input)))))
+
+(test-group "Day 6 real input"
+            (test "Answer 1"  1757 (day6:answer1 (string->list (car day6-real-input))))
+            (test "Answer 2"  2950 (day6:answer2 (string->list (car day6-real-input)))))
 
 (test-exit)
 
